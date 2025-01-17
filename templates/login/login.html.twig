@@ -1,0 +1,31 @@
+{# templates/security/login.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+    <h1>Connexion</h1>
+
+    <form method="post">
+        <div>
+            <label for="email">Email :</label>
+            <input type="text" id="email" name="_username" required autofocus/>
+        </div>
+
+        <div>
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="password" name="_password" required/>
+        </div>
+
+        <div>
+            <button type="submit">Se connecter</button>
+        </div>
+    </form>
+
+    {# Afficher les messages flash si disponibles #}
+    {% if app.session.flashbag.has('error') %}
+        <div class="alert alert-danger">
+            {{ app.session.flashbag.get('error')[0] }}
+        </div>
+    {% endif %}
+{% endblock %}
