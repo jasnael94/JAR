@@ -12,8 +12,15 @@ class UserFixtures extends Fixture
     {
         $user1 = new User();
         $user1->setEmail('arm@wall.com')
-              ->setPassword('malagasy123*');
+              ->setPassword('malagasy123*')
+              ->setRoles(['ROLE_USER']);
         $manager->persist($user1);
+
+        $user2 = new User();
+        $user2->setEmail('gaz@wall.com')
+              ->setPassword('street$ù*')
+              ->setRoles(['ROLE_USER']);
+        $manager->persist($user2);
 
         $manager->flush();
     }
