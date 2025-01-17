@@ -9,7 +9,7 @@ use Symfony\Component\Security\Core\Security;
 use Symfony\Component\HttpFoundation\Request;
 
 class LoginController extends AbstractController
-{
+{   
     #[Route("/login", name:"login")]
     public function login(Request $request)
     {
